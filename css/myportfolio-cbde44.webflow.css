@@ -928,6 +928,10 @@
     color: #fff;
     background-color: #a6b1bf;
   }
+  .hero-split img{
+    width: 70%;
+  }
+
 }
 
 @media screen and (max-width: 767px) {

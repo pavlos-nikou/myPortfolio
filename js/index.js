@@ -1,12 +1,12 @@
-const tlAbout = gsap.timeline()
+const abtTl = gsap.timeline()
 
-tlAbout.from(".stagger-text-animation", {
+abtTl.from(".stagger-text-animation", {
   duration: 2,
   text: "",
   ease: "power1",
 }, 0)
 
-tlAbout.from(".heading,.nav-menu-two li", {
+abtTl.from(".heading,.nav-menu-two li", {
   duration: 1.5,
   x: -50,
   opacity: 0,
@@ -14,13 +14,13 @@ tlAbout.from(".heading,.nav-menu-two li", {
   stagger: 0.2
 }, 1)
 
-tlAbout.from(".heading-2", {
+abtTl.from(".heading-2", {
   duration: 1,
   opacity: 0,
   delay: 0.5,
   ease: "sine.out"
 }, 0)
-tlAbout.from(".hero-split img", {
+abtTl.from(".hero-split img", {
   duration: 2,
   opacity: 0,
   rotate: -360,
@@ -28,34 +28,98 @@ tlAbout.from(".hero-split img", {
   ease: "elastic.out(0.6,0.5)"
 }, 0.5)
 
-const tl = gsap.timeline({
+
+const educationTl = gsap.timeline({
   scrollTrigger: {
-    trigger: "#myWork",
-    start: "top center",
+    trigger: "#education",
+    start: "top center"
   }
 })
 
-tl.from(".centered-heading", {
+educationTl.from("#education-title", {
+  opacity: 0,
+  // scale: 2,
+  duration: 1
+}, 0.5)
+
+educationTl.from(".education-intro", {
+  opacity: 0,
+  duration: 2
+}, 0.7)
+
+educationTl.from(".line", {
+  height: 0,
+  duration: 1,
+  ease: "power2.inOut"
+}, 2.5)
+
+educationTl.from(".dot", {
+  scale: 0,
+  duration: 0.3,
+  stagger: 0.2,
+  ease: "power2.inOut",
+}, 1)
+
+educationTl.from(".date", {
+  duration: 1,
+  rotationY: 90,
+  transformOrigin: "100% 50% 100%",
+  ease: "power2.inOut",
+  stagger: 0.25
+}, 1.5)
+
+educationTl.from(".info", {
+  duration: 1,
+  opacity: 0,
+  stagger: 0.25,
+  rotationY: -90,
+  transformOrigin: "0% 50% 100%",
+  ease: "power2.inOut"
+}, 1.5)
+
+educationTl.from("#skill-title", {
+  opacity: 0,
+  duration: 2,
+  ease: "sine.out"
+}, 1)
+
+educationTl.from(".skill", {
+  duration: 2,
+  stagger: 0.09,
+  opacity: 0
+}, 1.5)
+
+educationTl.from(".inner-bar", {
+  duration: 1.5,
+  stagger: 0.1,
+  width: 0,
+  ease: "power1.out" 
+},2.7)
+
+
+const myWorkTl = gsap.timeline({
+  scrollTrigger: {
+    trigger: "#myWork",
+    start: "top center"
+  }
+})
+
+myWorkTl.from(".centered-heading", {
   duration: 1,
   opacity: 0,
   scale: 0.8,
   ease: "sine.out"
 })
 
-tl.from(".centered-subheading", {
+myWorkTl.from(".centered-subheading", {
   duration: 2,
-  text: "",
+  opacity: 0,
   ease: "power1",
-})
+}, 0.3)
 
-tl.from(".card-block", {
+myWorkTl.from(".card-block", {
   x: -20,
   opacity: 0,
-  duration: 2,
+  duration: 1,
   stagger: 0.3
-})
-
-// tl.from(".card-image, team-member-name-two")
-
-// "clamp(top bottom)"
-
+}, 0.6)
