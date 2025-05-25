@@ -856,8 +856,9 @@
   }
 
   .card-slider-arrow{
+    font-size: 20px;
     background-color: argb(1,255,255,255);
-    color: red;
+    color: lightgray;
     display: block;
   }
 
